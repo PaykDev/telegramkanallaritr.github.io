@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TelegramKanallarıTR - Telegram Kanal ve Grup Reklam Platformu</title>
+    <meta name="description" content="Telegram kanal ve gruplarınızı ücretsiz tanıtın. Türkçe Telegram toplulukları, kanalları ve grupları için en iyi reklam platformu.">
+    <meta name="keywords" content="telegram, telegram kanal, telegram grup, telegram reklam, telegram topluluk, türkçe telegram">
+    
+    <!-- SEO Meta Etiketleri -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="TelegramKanallarıTR">
+    <meta property="og:title" content="TelegramKanallarıTR - Telegram Kanal ve Grup Reklam Platformu">
+    <meta property="og:description" content="Telegram kanal ve gruplarınızı ücretsiz tanıtın. Türkçe Telegram toplulukları için reklam platformu.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://telegramkanallaritr.com">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0088cc;
+            --secondary-color: #2a2e35;
+            --accent-color: #34b7f1;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --success-color: #28a745;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f5f7fa;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        /* Advertisement Banners */
+        .ad-banner {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+            border: 2px dashed #ffc107;
+        }
+        
+        .ad-banner.horizontal {
+            width: 100%;
+        }
+        
+        .ad-banner.vertical {
+            width: 300px;
+            float: right;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .ad-banner.sidebar {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .ad-banner a {
+            display: block;
+            color: #d9534f;
+            font-weight: 600;
+        }
+        
+        .ad-banner a:hover {
+            color: #c9302c;
+        }
+        
+        /* Categories Section */
+        .categories {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .category-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .category-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .category-card .count {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Channels Section */
+        .channels {
+            padding: 60px 0;
+        }
+        
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            gap: 10px;
+        }
+        
+        .category-tab {
+            padding: 10px 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .category-tab:hover, .category-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .channels-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .channel-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .channel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .channel-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .channel-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .channel-info h3 {
+            margin-bottom: 5px;
+        }
+        
+        .channel-category {
+            display: inline-block;
+            background-color: var(--light-color);
+            color: var(--gray-color);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+        
+        .channel-description {
+            margin-bottom: 15px;
+            color: var(--gray-color);
+        }
+        
+        .channel-stats {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .channel-link {
+            display: block;
+            text-align: center;
+            padding: 8px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+        }
+        
+        .channel-link:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        /* Blog Section */
+        .blog {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-post {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-post-img {
+            height: 200px;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .blog-post-content {
+            padding: 20px;
+        }
+        
+        .blog-post-meta {
+            display: flex;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .blog-post-meta span {
+            margin-right: 15px;
+        }
+        
+        .blog-post-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        .blog-post-content p {
+            color: var(--gray-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Add Channel Section */
+        .add-channel {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--secondary-color), #1a1d23);
+            color: white;
+        }
+        
+        .add-channel h2 {
+            color: white;
+        }
+        
+        .add-channel p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .contact-btn {
+            background-color: white;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            padding: 12px 30px;
+        }
+        
+        .contact-btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .footer-about p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h3, .footer-contact h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: #ccc;
+        }
+        
+        .footer-links ul li a:hover {
+            color: white;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .footer-contact a {
+            color: #ccc;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-contact a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .ad-banner.vertical {
+                float: none;
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .category-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-tab {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .blog-posts, .channels-container, .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fab fa-telegram"></i>
+                TelegramKanallarıTR
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="#" class="active">Ana Sayfa</a></li>
+                    <li><a href="#categories">Kategoriler</a></li>
+                    <li><a href="#channels">Kanallar</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#add-channel">Kanal Ekle</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <!-- Üst Reklam Banner -->
+            <div class="ad-banner horizontal">
+                <a href="https://t.me/PaykDev" target="_blank">
+                    <i class="fas fa-ad"></i> Bu alana reklam verebilmek için tıklayınız
+                </a>
+            </div>
+            
+            <h1>Telegram Kanallarını Ücretsiz Tanıtın</h1>
+            <p>Türkçe Telegram kanal ve gruplarınızı binlerce kullanıcıya ulaştırın. Tamamen ücretsiz reklam platformumuz ile topluluğunuzu büyütün.</p>
+            <a href="#add-channel" class="btn">Kanalını Ücretsiz Ekle</a>
+        </div>
+    </section>
+
+    <!-- Yan Reklam Alanı -->
+    <div class="container">
+        <div class="ad-banner vertical">
+            <a href="https://t.me/PaykDev" target="_blank">
+                <i class="fas fa-ad"></i> Bu alana reklam verebilmek için tıklayınız
+            </a>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Kategoriler</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 40px; color: var(--gray-color);">Telegram kanallarınızı ilgili kategorilerde listeleyerek hedef kitlenize daha kolay ulaşın.</p>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <i class="fas fa-newspaper"></i>
+                    <h3>Haber & Medya</h3>
+                    <p>Güncel haberler ve medya içerikleri</p>
+                    <span class="count">24 Kanal</span>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Eğitim</h3>
+                    <p>Eğitim ve öğrenme kaynakları</p>
+                    <span class="count">18 Kanal</span>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-film"></i>
+                    <h3>Eğlence</h3>
+                    <p>Film, dizi ve eğlence içerikleri</p>
+                    <span class="count">32 Kanal</span>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Teknoloji</h3>
+                    <p>Yazılım, teknoloji ve bilim</p>
+                    <span class="count">22 Kanal</span>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Yaşam & Sağlık</h3>
+                    <p>Sağlık, yaşam tarzı ve kişisel gelişim</p>
+                    <span class="count">15 Kanal</span>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Alışveriş & Ticaret</h3>
+                    <p>Alışveriş, indirim ve ticaret grupları</p>
+                    <span class="count">12 Kanal</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Channels Section -->
+    <section class="channels" id="channels">
+        <div class="container">
+            <h2 class="section-title">Popüler Telegram Kanalları</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 40px; color: var(--gray-color);">En popüler Telegram kanallarını keşfedin ve topluluğunuza katılın.</p>
+            
+            <!-- Kategori Filtreleri -->
+            <div class="category-tabs">
+                <div class="category-tab active" data-category="all">Tümü</div>
+                <div class="category-tab" data-category="news">Haber & Medya</div>
+                <div class="category-tab" data-category="education">Eğitim</div>
+                <div class="category-tab" data-category="entertainment">Eğlence</div>
+                <div class="category-tab" data-category="technology">Teknoloji</div>
+            </div>
+            
+            <!-- Ara Reklam Banner -->
+            <div class="ad-banner horizontal" style="margin: 30px 0;">
+                <a href="https://t.me/PaykDev" target="_blank">
+                    <i class="fas fa-ad"></i> Bu alana reklam verebilmek için tıklayınız
+                </a>
+            </div>
+            
+            <!-- Kanallar Listesi -->
+            <div class="channels-container">
+                <!-- Kanal 1 -->
+                <div class="channel-card" data-category="news">
+                    <div class="channel-header">
+                        <div class="channel-avatar">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="channel-info">
+                            <h3>Güncel Haberler</h3>
+                            <div class="channel-category">Haber & Medya</div>
+                        </div>
+                    </div>
+                    <p class="channel-description">Türkiye ve dünyadan son dakika haberleri, güncel gelişmeler ve analizler.</p>
+                    <div class="channel-stats">
+                        <span><i class="fas fa-users"></i> 15.2K Üye</span>
+                        <span><i class="far fa-calendar-alt"></i> 2 yıldır aktif</span>
+                    </div>
+                    <a href="https://t.me/guncel_haberler" target="_blank" class="channel-link">Kanala Katıl</a>
+                </div>
+                
+                <!-- Kanal 2 -->
+                <div class="channel-card" data-category="education">
+                    <div class="channel-header">
+                        <div class="channel-avatar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="channel-info">
+                            <h3>Yazılım Geliştirme</h3>
+                            <div class="channel-category">Eğitim</div>
+                        </div>
+                    </div>
+                    <p class="channel-description">Yazılım geliştirme, programlama dersleri ve teknoloji haberleri.</p>
+                    <div class="channel-stats">
+                        <span><i class="fas fa-users"></i> 8.7K Üye</span>
+                        <span><i class="far fa-calendar-alt"></i> 1 yıldır aktif</span>
+                    </div>
+                    <a href="https://t.me/yazilim_gelistirme" target="_blank" class="channel-link">Kanala Katıl</a>
+                </div>
+                
+                <!-- Kanal 3 -->
+                <div class="channel-card" data-category="entertainment">
+                    <div class="channel-header">
+                        <div class="channel-avatar">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <div class="channel-info">
+                            <h3>Film & Dizi Önerileri</h3>
+                            <div class="channel-category">Eğlence</div>
+                        </div>
+                    </div>
+                    <p class="channel-description">En yeni film ve dizi önerileri, fragmanlar ve sektör haberleri.</p>
+                    <div class="channel-stats">
+                        <span><i class="fas fa-users"></i> 22.5K Üye</span>
+                        <span><i class="far fa-calendar-alt"></i> 3 yıldır aktif</span>
+                    </div>
+                    <a href="https://t.me/film_dizi_onerileri" target="_blank" class="channel-link">Kanala Katıl</a>
+                </div>
+                
+                <!-- Kanal 4 -->
+                <div class="channel-card" data-category="technology">
+                    <div class="channel-header">
+                        <div class="channel-avatar">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="channel-info">
+                            <h3>Teknoloji Haberleri</h3>
+                            <div class="channel-category">Teknoloji</div>
+                        </div>
+                    </div>
+                    <p class="channel-description">Teknoloji dünyasından en son haberler, incelemeler ve gelişmeler.</p>
+                    <div class="channel-stats">
+                        <span><i class="fas fa-users"></i> 12.8K Üye</span>
+                        <span><i class="far fa-calendar-alt"></i> 2 yıldır aktif</span>
+                    </div>
+                    <a href="https://t.me/teknoloji_haber" target="_blank" class="channel-link">Kanala Katıl</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2 class="section-title">Telegram Blog</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 40px; color: var(--gray-color);">Telegram ile ilgili en güncel ipuçları, rehberler ve haberler.</p>
+            
+            <div class="blog-posts">
+                <!-- Blog 1 -->
+                <article class="blog-post">
+                    <div class="blog-post-img" style="background-color: #34b7f1;">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span><i class="far fa-calendar"></i> 10 Haziran 2023</span>
+                            <span><i class="far fa-user"></i> PaykDev</span>
+                        </div>
+                        <h3>Telegram Kanalları Nasıl Büyütülür?</h3>
+                        <p>Telegram kanalınızı büyütmek ve daha fazla üyeye ulaşmak için etkili stratejiler ve ipuçları.</p>
+                        <a href="#" class="btn">Devamını Oku</a>
+                    </div>
+                </article>
+                
+                <!-- Blog 2 -->
+                <article class="blog-post">
+                    <div class="blog-post-img" style="background-color: #0088cc;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span><i class="far fa-calendar"></i> 28 Mayıs 2023</span>
+                            <span><i class="far fa-user"></i> PaykDev</span>
+                        </div>
+                        <h3>Telegram'da Güvenlik ve Gizlilik</h3>
+                        <p>Telegram'da gizliliğinizi korumak ve güvenliği artırmak için yapmanız gerekenler.</p>
+                        <a href="#" class="btn">Devamını Oku</a>
+                    </div>
+                </article>
+                
+                <!-- Blog 3 -->
+                <article class="blog-post">
+                    <div class="blog-post-img" style="background-color: #2a2e35;">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span><i class="far fa-calendar"></i> 15 Mayıs 2023</span>
+                            <span><i class="far fa-user"></i> PaykDev</span>
+                        </div>
+                        <h3>Telegram Botları Nasıl Kullanılır?</h3>
+                        <p>Telegram botları ile işlerinizi otomatikleştirin ve kanal yönetimini kolaylaştırın.</p>
+                        <a href="#" class="btn">Devamını Oku</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Channel Section -->
+    <section class="add-channel" id="add-channel">
+        <div class="container">
+            <h2>Kanalınızı Ücretsiz Ekleyin</h2>
+            <p>Telegram kanalınızı veya grubunuzu binlerce kullanıcıya ücretsiz tanıtmak için hemen iletişime geçin. Kanalınızı eklemek ve detayları görüşmek için lütfen Telegram üzerinden iletişime geçin.</p>
+            
+            <a href="https://t.me/PaykDev" target="_blank" class="btn contact-btn">
+                <i class="fab fa-telegram"></i> PaykDev ile İletişime Geç
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fab fa-telegram"></i> TelegramKanallarıTR
+                    </div>
+                    <p>Türkçe Telegram kanal ve gruplarını ücretsiz tanıtmak için oluşturulmuş bir platform. Topluluklarınızı büyütün, daha fazla kullanıcıya ulaşın.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Hızlı Bağlantılar</h3>
+                    <ul>
+                        <li><a href="#">Ana Sayfa</a></li>
+                        <li><a href="#categories">Kategoriler</a></li>
+                        <li><a href="#channels">Kanallar</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#add-channel">Kanal Ekle</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>İletişim</h3>
+                    <p>Kanallarınızı eklemek veya reklam vermek için:</p>
+                    <a href="https://t.me/PaykDev" target="_blank">
+                        <i class="fab fa-telegram"></i> @PaykDev
+                    </a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 TelegramKanallarıTR. Tüm hakları saklıdır. | Bu site <a href="https://t.me/PaykDev" target="_blank" style="color: var(--accent-color);">PaykDev</a> tarafından geliştirilmiştir.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobil Menü Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('mainMenu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Kategori Filtreleme
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Aktif tab'ı güncelle
+                document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                const channels = document.querySelectorAll('.channel-card');
+                
+                channels.forEach(channel => {
+                    if (category === 'all' || channel.getAttribute('data-category') === category) {
+                        channel.style.display = 'block';
+                    } else {
+                        channel.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Sayfa yüklendiğinde mobil menüyü kontrol et
+        window.addEventListener('resize', function() {
+            const menu = document.getElementById('mainMenu');
+            if (window.innerWidth > 768) {
+                menu.style.display = 'flex';
+            } else {
+                menu.style.display = 'none';
+            }
+        });
+        
+        // Sayfa yüklenirken mobil menüyü ayarla
+        window.addEventListener('load', function() {
+            if (window.innerWidth <= 768) {
+                document.getElementById('mainMenu').style.display = 'none';
+            }
+        });
+        
+        // Düzgün kaydırma için menü linklerini ayarla
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // Mobil menüyü kapat
+                    if (window.innerWidth <= 768) {
+                        document.getElementById('mainMenu').style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
